@@ -15,6 +15,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 DROP DATABASE IF EXISTS `lms`;
 CREATE DATABASE lms CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE lms;
 --
 -- Table structure for table `user`
 --
