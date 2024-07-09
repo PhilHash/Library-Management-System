@@ -78,7 +78,7 @@ if ($_SESSION['RollNo']) {
                                         <div class="control-group">
                                             <label class="control-label" for="Search"><b>Tìm Kiếm:</b></label>
                                             <div class="controls">
-                                                <input type="text" id="title" name="title" placeholder="Enter Roll No of Student/Book Name/Book Id." class="span8" required>
+                                                <input type="text" id="title" name="title" placeholder="Nhập vào số đăng ký người dùng/tên sách/id sách." class="span8" required>
                                                 <button type="submit" name="submit"class="btn">Tìm Kiếm</button>
                                             </div>
                                         </div>
@@ -87,10 +87,10 @@ if ($_SESSION['RollNo']) {
                                     <?php
                                     if(isset($_POST['submit']))
                                         {$s=$_POST['title'];
-                                            $sql="select record.BookId,RollNo,Title,Due_Date,Date_of_Issue,datediff(curdate(),Due_Date) as x from LMS.record,LMS.book where (Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId) and (RollNo='$s' or record.BookId='$s' or Title like '%$s%')";
+                                            $sql="select record.BookId,RollNo,Title,Due_Date,Date_of_Issue,datediff(Due_Date,curdate()) as x from LMS.record,LMS.book where (Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId) and (RollNo='$s' or record.BookId='$s' or Title like '%$s%')";
                                         }
                                     else
-                                        $sql="select record.BookId,RollNo,Title,Due_Date,Date_of_Issue,datediff(curdate(),Due_Date) as x from LMS.record,LMS.book where Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
+                                        $sql="select record.BookId,RollNo,Title,Due_Date,Date_of_Issue,datediff(Due_Date,curdate()) as x from LMS.record,LMS.book where Date_of_Issue is NOT NULL and Date_of_Return is NULL and book.Bookid = record.BookId";
                                     $result=$conn->query($sql);
                                     $rowcount=mysqli_num_rows($result);
 
@@ -108,8 +108,8 @@ if ($_SESSION['RollNo']) {
                                       <th>ID Sách</th>
                                       <th>Tên Sách</th>
                                       <th>Ngày mượn</th>
-                                      <th>Ngày đáo hạn</th>
                                       <th>Ngày hạn</th>
+                                      <th>Ngày còn lại</th>
                                     </tr>
                                   </thead>
                                   <tbody>
