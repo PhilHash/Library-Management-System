@@ -59,7 +59,7 @@ require('dbconn.php');
 				<input type="text" Name="PhoneNumber" placeholder="Số điện thoại" required>
 				<input type="text" Name="RollNo" placeholder="Số đăng ký" required="">
 				
-				<select name="Category" id="Category">
+				<select name="Category" id="Category" style="background-color: #809fff; border-radius: 10px;">
 					<option value="CH">Chung</option>
 					<option value="SV">Sinh viên</option>
 					<option value="GV">Giáo Viên</option>
