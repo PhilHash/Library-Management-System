@@ -14,7 +14,7 @@ header( "Refresh:0.01; url=book.php", true, 303);
 }
 else
 {
-	echo "<script type='text/javascript'>alert('Yêu cầu đã được gửi.')</script>";
+	echo "<script type='text/javascript'>alert('Bạn đã mượn rồi.')</script>";
     header( "Refresh:0.01; url=book.php", true, 303);
 
 }
