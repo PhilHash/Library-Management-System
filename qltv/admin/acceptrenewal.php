@@ -13,7 +13,7 @@ $category=$row['Category'];
 
 
 if($category == 'CH' || $category == 'SV' )
-{$sql1="update LMS.record set Due_Date=date_add(Due_Date,interval 60 day),Renewals_left=0 where BookId='$bookid' and RollNo='$rollno'";
+{$sql1="update LMS.record set Due_Date=date_add(Due_Date,interval 40 day),Renewals_left=0 where BookId='$bookid' and RollNo='$rollno'";
  
 if($conn->query($sql1) === TRUE)
 {$sql3="delete from LMS.renew where BookId='$bookid' and RollNo='$rollno'";
@@ -32,7 +32,7 @@ else
 }
 }
 else
-{$sql2="update LMS.record set Due_Date=date_add(Due_Date,interval 180 day),Renewals_left=0 where BookId='$bookid' and RollNo='$rollno'";
+{$sql2="update LMS.record set Due_Date=date_add(Due_Date,interval 40 day),Renewals_left=0 where BookId='$bookid' and RollNo='$rollno'";
 
 if($conn->query($sql2) === TRUE)
 {$sql4="delete from LMS.renew where BookId='$bookid' and RollNo='$rollno'";

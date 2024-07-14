@@ -1,5 +1,12 @@
 ﻿<?php
 require('dbconn.php');
+if (!isset($_SESSION['alert_shown'])) {
+    // Display the alert
+    echo "<script>alert('✌✌Chào! Bạn đang sử dụng tài khoản admin. Xin thận trọng khi sử dụng!🥲🥲 Thân! 😇😇');</script>";
+
+    // Set the session variable to indicate that the alert has been shown
+    $_SESSION['alert_shown'] = true;
+}
 ?>
 
 <?php 

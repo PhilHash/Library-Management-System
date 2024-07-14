@@ -13,7 +13,7 @@ $category=$row['Category'];
 
 
 if($category == 'CH' || $category == 'SV' )
-{$sql1="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 60 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
+{$sql1="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 40 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
  
 if($conn->query($sql1) === TRUE)
 {$sql3="update LMS.book set Availability=Availability-1 where BookId='$bookid'";
@@ -31,7 +31,7 @@ else
 }
 }
 else
-{$sql2="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 180 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
+{$sql2="update LMS.record set Date_of_Issue=curdate(),Due_Date=date_add(curdate(),interval 40 day),Renewals_left=1 where BookId='$bookid' and RollNo='$rollno'";
 
 if($conn->query($sql2) === TRUE)
 {$sql4="update LMS.book set Availability=Availability-1 where BookId='$bookid'";
