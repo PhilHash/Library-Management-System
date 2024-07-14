@@ -95,7 +95,7 @@ if ($_SESSION['RollNo']) {
                                     $rowcount=mysqli_num_rows($result);
 
                                     if(!($rowcount))
-                                        echo "<br><center><h2><b><i>No Results</i></b></h2></center>";
+                                        echo "<br><center><h2><b><i>Không kết quả</i></b></h2></center>";
                                     else
                                     {
 
