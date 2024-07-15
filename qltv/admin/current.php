@@ -81,6 +81,7 @@ if ($_SESSION['RollNo']) {
                                                 <input type="text" id="title" name="title" placeholder="Nhập vào số đăng ký người dùng/tên sách/id sách." class="span8" required>
                                                 <button type="submit" name="submit"class="btn">Tìm Kiếm</button>
                                             </div>
+                                            <button onclick="pagePrint()" href="#" class="btn" style="background-color: cyan;">In danh sách</button>
                                         </div>
                                     </form>
                                     <br>
@@ -166,7 +167,16 @@ if ($_SESSION['RollNo']) {
         <script src="scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
         <script src="scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
         <script src="scripts/common.js" type="text/javascript"></script>
-      
+        <script> 
+            function pagePrint(){
+                var printdata = document.getElementById("tables");
+                newwin=window.open("");
+                newwin.document.write('<style type="text/css">@media print { table { border-collapse: collapse; } table, th, td { border: 1px solid black; } }</style>');
+                newwin.document.write(printdata.outerHTML);
+                newwin.print();
+                newwin.close();
+            }
+        </script>
     </body>
 
 </html>
