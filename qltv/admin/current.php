@@ -172,6 +172,7 @@ if ($_SESSION['RollNo']) {
                 var printdata = document.getElementById("tables");
                 newwin=window.open("");
                 newwin.document.write('<style type="text/css">@media print { table { border-collapse: collapse; } table, th, td { border: 1px solid black; } }</style>');
+                newwin.document.write('<h2>Danh Sách Người Mượn Sách Hiện Tại</h2>');
                 newwin.document.write(printdata.outerHTML);
                 newwin.print();
                 newwin.close();
