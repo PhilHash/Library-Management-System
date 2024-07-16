@@ -303,7 +303,7 @@ ALTER TABLE `recommendations`
 -- Indexes for table `record`
 --
 ALTER TABLE `record`
-  ADD PRIMARY KEY (`RollNo`,`BookId`),
+  ADD KEY `RollNo` (`RollNo`),
   ADD KEY `BookId` (`BookId`);
 
 --
