@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2024 at 04:29 AM
+-- Generation Time: Jul 22, 2024 at 08:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -11,8 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-CREATE DATABASE LMS CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE LMS;
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -21,6 +20,8 @@ USE LMS;
 --
 -- Database: `lms`
 --
+CREATE DATABASE IF NOT EXISTS `lms` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `lms`;
 
 -- --------------------------------------------------------
 
@@ -72,16 +73,16 @@ CREATE TABLE `book` (
 INSERT INTO `book` (`BookId`, `Title`, `Publisher`, `Year`, `Availability`) VALUES
 (1, 'Tuổi thơ dữ dội', 'Hồ Chí Minh', '2002', 5),
 (2, 'Sống mòn', 'Hà Nội', '2003', 4),
-(3, 'Vượt côn đảo', 'Hồ Chí Minh', '2003', 4),
+(3, 'Vượt côn đảo', 'Hồ Chí Minh', '2003', 1),
 (4, 'Kim Vân Kiều', 'Hồ Chí Minh', '2003', 0),
-(5, 'Ông Già Và Biển Cả', 'Kim Đồng', '2002', 5),
-(6, 'Chí Phèo', 'Kim Đồng', '2001', 8),
-(7, 'Lão Hạc', 'Hồ Chí Minh', '2002', 9),
-(8, 'Truyện Kiều', 'Kim Đồng', '2005', 12),
-(9, 'Mặt trời vẫn mọc', 'Hồ Chí Minh', '2001', 4),
+(5, 'Ông Già Và Biển Cả', 'Kim Đồng', '2002', 1),
+(6, 'Chí Phèo', 'Kim Đồng', '2001', 7),
+(7, 'Lão Hạc', 'Hồ Chí Minh', '2002', 7),
+(8, 'Truyện Kiều', 'Kim Đồng', '2005', 7),
+(9, 'Mặt trời vẫn mọc', 'Hồ Chí Minh', '2001', 3),
 (10, 'Cho tôi xin một vé đi tuổi thơ', 'Hồ Chí Minh', '2006', 3),
-(11, 'Tôi thấy hoa vàng trên cỏ xanh', 'Hồ Chí Minh', '2010', 11),
-(12, 'Chồng Xứ Lạ', 'Hồ Chí Minh', '2010', 10);
+(11, 'Tôi thấy hoa vàng trên cỏ xanh', 'Hồ Chí Minh', '2010', 7),
+(12, 'Chồng Xứ Lạ', 'Hồ Chí Minh', '2010', 6);
 
 -- --------------------------------------------------------
 
@@ -129,7 +130,53 @@ INSERT INTO `message` (`M_Id`, `RollNo`, `Msg`, `Date`, `Time`) VALUES
 (42, 'user05', 'Yêu cầu mượn: 11 đã được chấp nhận', '2024-07-09', '09:28:43'),
 (43, 'user02', 'Yêu cầu mượn sách với id: 6  bị từ chối', '2024-07-09', '09:28:45'),
 (44, 'user04', 'Yêu cầu mượn sách với id: 7  bị từ chối', '2024-07-09', '09:28:46'),
-(45, 'user07', 'Yêu cầu mượn sách với id: 9  bị từ chối', '2024-07-09', '09:28:46');
+(45, 'user07', 'Yêu cầu mượn sách với id: 9  bị từ chối', '2024-07-09', '09:28:46'),
+(46, 'user01', 'Yêu cầu mượn: 8  đã được chấp nhận', '2024-07-22', '13:20:16'),
+(47, 'user01', 'Yêu cầu mượn: 7  đã được chấp nhận', '2024-07-22', '13:20:18'),
+(48, 'user01', 'Yêu cầu mượn: 5  đã được chấp nhận', '2024-07-22', '13:20:20'),
+(49, 'user01', 'Yêu cầu mượn: 11  đã được chấp nhận', '2024-07-22', '13:47:52'),
+(50, 'user01', 'Yêu cầu mượn: 8  đã được chấp nhận', '2024-07-22', '13:47:53'),
+(51, 'user01', 'Yêu cầu mượn: 12  đã được chấp nhận', '2024-07-22', '13:47:54'),
+(52, 'user01', 'Yêu cầu mượn: 7  đã được chấp nhận', '2024-07-22', '13:47:55'),
+(53, 'user01', 'Yêu cầu mượn: 1  đã được chấp nhận', '2024-07-22', '13:47:55'),
+(54, 'user01', 'Yêu cầu mượn: 3  đã được chấp nhận', '2024-07-22', '13:47:56'),
+(55, 'user01', 'Your request for return of BookId: 7  has been accepted', '2024-07-22', '13:48:56'),
+(56, 'user01', 'Yêu cầu mượn: 6  đã được chấp nhận', '2024-07-22', '13:49:23'),
+(57, 'user01', 'Yêu cầu mượn: 5  đã được chấp nhận', '2024-07-22', '13:50:55'),
+(58, 'user01', 'Yêu cầu mượn: 7  đã được chấp nhận', '2024-07-22', '13:50:56'),
+(59, 'user02', 'Yêu cầu mượn: 11  đã được chấp nhận', '2024-07-22', '13:50:56'),
+(60, 'user02', 'Yêu cầu mượn: 8  đã được chấp nhận', '2024-07-22', '13:50:57'),
+(61, 'user02', 'Yêu cầu mượn: 12  đã được chấp nhận', '2024-07-22', '13:50:58'),
+(62, 'user02', 'Yêu cầu mượn: 7  đã được chấp nhận', '2024-07-22', '13:50:59'),
+(63, 'user03', 'Yêu cầu mượn: 11 đã được chấp nhận', '2024-07-22', '13:51:00'),
+(64, 'user03', 'Yêu cầu mượn: 8 đã được chấp nhận', '2024-07-22', '13:51:01'),
+(65, 'user03', 'Yêu cầu mượn: 12 đã được chấp nhận', '2024-07-22', '13:51:04'),
+(66, 'user04', 'Yêu cầu mượn: 2 đã được chấp nhận', '2024-07-22', '13:51:06'),
+(67, 'user04', 'Yêu cầu mượn: 3 đã được chấp nhận', '2024-07-22', '13:51:08'),
+(68, 'user05', 'Yêu cầu mượn: 5 đã được chấp nhận', '2024-07-22', '13:51:10'),
+(69, 'user05', 'Yêu cầu mượn: 9 đã được chấp nhận', '2024-07-22', '13:51:11'),
+(70, 'user07', 'Yêu cầu mượn: 6 đã được chấp nhận', '2024-07-22', '13:51:13'),
+(71, 'user07', 'Yêu cầu mượn: 8 đã được chấp nhận', '2024-07-22', '13:51:14'),
+(72, 'user06', 'Yêu cầu mượn: 11  đã được chấp nhận', '2024-07-22', '13:51:16'),
+(73, 'user06', 'Yêu cầu mượn: 8  đã được chấp nhận', '2024-07-22', '13:51:17'),
+(74, 'user06', 'Yêu cầu mượn: 12  đã được chấp nhận', '2024-07-22', '13:51:17'),
+(75, 'user06', 'Yêu cầu mượn: 5  đã được chấp nhận', '2024-07-22', '13:51:18'),
+(76, 'user07', 'Yêu cầu mượn: 3 đã được chấp nhận', '2024-07-22', '13:51:18'),
+(77, 'user07', 'Yêu cầu mượn: 2 đã được chấp nhận', '2024-07-22', '13:51:20'),
+(78, 'user03', 'Your request for return of BookId: 8  has been accepted', '2024-07-22', '13:51:25'),
+(79, 'user02', 'Yêu cầu làm mới: 11  đã được chấp nhận', '2024-07-22', '13:51:28'),
+(80, 'user01', 'Your request for return of BookId: 1  has been accepted', '2024-07-22', '13:51:50'),
+(81, 'user01', 'Your request for return of BookId: 6  has been accepted', '2024-07-22', '13:51:51'),
+(82, 'user01', 'Your request for return of BookId: 7  has been accepted', '2024-07-22', '13:51:52'),
+(83, 'user02', 'Your request for return of BookId: 11  has been accepted', '2024-07-22', '13:52:13'),
+(84, 'user01', 'Your request for return of BookId: 8  has been accepted', '2024-07-22', '13:52:14'),
+(85, 'user02', 'Yêu cầu mượn: 11  đã được chấp nhận', '2024-07-22', '13:52:27'),
+(86, 'user03', 'Yêu cầu làm mới: 11 đã được chấp nhận', '2024-07-22', '13:54:05'),
+(87, 'user04', 'Your request for return of BookId: 2  has been accepted', '2024-07-22', '13:54:07'),
+(88, 'user06', 'Your request for return of BookId: 8  has been accepted', '2024-07-22', '13:54:07'),
+(89, 'user07', 'Your request for return of BookId: 2  has been accepted', '2024-07-22', '13:54:08'),
+(90, 'user05', 'Yêu cầu mượn: 8 đã được chấp nhận', '2024-07-22', '13:54:10'),
+(91, 'user04', 'Yêu cầu mượn: 8 đã được chấp nhận', '2024-07-22', '13:54:12');
 
 -- --------------------------------------------------------
 
@@ -180,22 +227,27 @@ CREATE TABLE `record` (
 --
 
 INSERT INTO `record` (`RollNo`, `BookId`, `Date_of_Issue`, `Due_Date`, `Date_of_Return`, `Dues`, `Renewals_left`, `Time`) VALUES
-('user01', 1, '2024-04-17', '2024-08-17', '2024-06-17', NULL, NULL, '13:18:12'),
-('user01', 6, '2024-07-09', '2024-09-07', NULL, NULL, 1, '09:25:16'),
-('user01', 11, '2024-07-09', '2024-09-07', NULL, NULL, 1, '09:25:11'),
-('user01', 12, '2024-07-09', '2024-09-07', NULL, NULL, 1, '09:25:14'),
-('user02', 7, '2024-07-09', '2024-09-07', NULL, NULL, 1, '09:26:23'),
-('user02', 9, '2024-06-25', '2024-07-07', '2024-10-17', NULL, NULL, '13:14:20'),
-('user03', 10, '2024-06-25', '2024-07-25', '2024-08-25', NULL, NULL, '13:14:20'),
-('user04', 4, '2024-07-09', '2024-09-05', NULL, NULL, 1, '09:26:51'),
-('user04', 5, '2024-04-25', '2024-06-24', '2024-08-25', NULL, NULL, '13:14:20'),
-('user04', 12, '2024-07-09', '2024-09-05', NULL, NULL, 1, '09:26:49'),
-('user05', 2, '2024-07-09', '2024-09-05', NULL, NULL, 1, '09:26:36'),
-('user05', 8, '2024-06-25', '2024-08-24', NULL, NULL, 1, '13:14:20'),
-('user05', 11, '2024-07-09', '2024-09-05', NULL, NULL, 1, '09:26:35'),
-('user06', 3, '2024-06-25', '2024-08-25', NULL, NULL, NULL, '13:14:20'),
-('user07', 4, '2024-06-25', '2024-08-24', NULL, NULL, 1, '13:14:20'),
-('user07', 6, '2024-07-09', '2024-09-05', NULL, NULL, 1, '09:27:19');
+('user01', 3, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:47:40'),
+('user01', 5, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:49:04'),
+('user01', 11, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:47:32'),
+('user01', 12, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:47:35'),
+('user02', 7, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:49:39'),
+('user02', 8, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:49:37'),
+('user02', 11, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:52:21'),
+('user02', 12, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:49:38'),
+('user03', 11, '2024-07-22', '2024-10-10', NULL, NULL, 0, '13:49:53'),
+('user03', 12, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:49:55'),
+('user04', 3, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:07'),
+('user04', 8, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:53:43'),
+('user05', 5, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:16'),
+('user05', 8, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:53:34'),
+('user05', 9, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:17'),
+('user06', 5, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:40'),
+('user06', 11, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:42'),
+('user06', 12, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:41'),
+('user07', 3, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:29'),
+('user07', 6, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:26'),
+('user07', 8, '2024-07-22', '2024-08-31', NULL, NULL, 1, '13:50:28');
 
 -- --------------------------------------------------------
 
@@ -214,7 +266,6 @@ CREATE TABLE `renew` (
 
 INSERT INTO `renew` (`RollNo`, `BookId`) VALUES
 ('user01', 2),
-('user02', 11),
 ('user04', 12),
 ('user05', 6);
 
@@ -234,7 +285,6 @@ CREATE TABLE `return` (
 --
 
 INSERT INTO `return` (`RollNo`, `BookId`) VALUES
-('user03', 8),
 ('user04', 5),
 ('user06', 3),
 ('user07', 4);
@@ -303,7 +353,7 @@ ALTER TABLE `recommendations`
 -- Indexes for table `record`
 --
 ALTER TABLE `record`
-  ADD KEY `RollNo` (`RollNo`),
+  ADD PRIMARY KEY (`RollNo`,`BookId`),
   ADD KEY `BookId` (`BookId`);
 
 --
@@ -341,7 +391,7 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `M_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `M_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `recommendations`
@@ -391,8 +441,3 @@ ALTER TABLE `renew`
 ALTER TABLE `return`
   ADD CONSTRAINT `return_ibfk_1` FOREIGN KEY (`RollNo`) REFERENCES `user` (`RollNo`) ON DELETE CASCADE,
   ADD CONSTRAINT `return_ibfk_2` FOREIGN KEY (`BookId`) REFERENCES `book` (`BookId`) ON DELETE CASCADE;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
