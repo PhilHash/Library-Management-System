@@ -25,7 +25,7 @@ if($conn->query($sql1) === TRUE)
  $result=$conn->query($sql6);
  $sql7="delete from LMS.record where BookId='$bookid' and RollNo='$rollno'";
  $result=$conn->query($sql7);
- $sql5="insert into LMS.message (RollNo,Msg,Date,Time) values ('$rollno','Your request for return of BookId: $bookid  has been accepted',curdate(),curtime())";
+ $sql5="insert into LMS.message (RollNo,Msg,Date,Time) values ('$rollno','Yêu cầu trả sách id: $bookid  đã được chấp nhận',curdate(),curtime())";
  $result=$conn->query($sql5);
 echo "<script type='text/javascript'>alert('Success')</script>";
 header( "Refresh:0.01; url=return_requests.php", true, 303);
